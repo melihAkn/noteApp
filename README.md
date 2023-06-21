@@ -14,16 +14,20 @@ Aşağıdaki adımları izleyerek projeyi yerel makinenizde çalıştırabilirsi
 git clone https://github.com/melihAkn/noteApp
 
 2. Proje klasörüne gidin:
-cd .\noteApp\Backend\
+
+  cd .\noteApp\Backend\
 
 3. Gerekli bağımlılıkları yüklemek için aşağıdaki komutu çalıştırın:
-npm install
+
+  npm install
 
 4. MongoDB veritabanını başlatın:
-mongod
+
+  mongod
 
 5. Projeyi başlatmak için aşağıdaki komutu çalıştırın:
-npm start
+
+  npm start
 
 6. API'ları test etmek için bir API geliştirme aracı (Postman, cURL vb.) kullanabilirsiniz.
 
