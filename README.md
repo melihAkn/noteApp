@@ -1,15 +1,15 @@
 ##language options
 - [Turkish](#Turkish)
 
-- User Note Taking Application (API Only)
+- 
+## Start
+User Note Taking Application (API Only)
 
 This project is an API-based user system and note-taking application where users can log in, register, update their information, and add notes. The project also includes an admin system for managing user-related operations.
 
 Users are provided with a simple log system that records their actions, no matter how basic they may be.
 
 At this stage, there is no frontend part available.
-## Start
-
 You can run the project on your local machine by following the steps below:
 
 1. Clone this project by running the following command:
