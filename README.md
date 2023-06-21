@@ -1,7 +1,5 @@
 ##language options
 - [Turkish](#Turkish)
-
-- 
 ## Start
 User Note Taking Application (API Only)
 
