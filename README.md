@@ -14,11 +14,9 @@ Aşağıdaki adımları izleyerek projeyi yerel makinenizde çalıştırabilirsi
 git clone https://github.com/melihAkn/noteApp
 
 2. Proje klasörüne gidin:
-
 cd .\noteApp\Backend\
 
 3. Gerekli bağımlılıkları yüklemek için aşağıdaki komutu çalıştırın:
-
 npm install
 
 4. MongoDB veritabanını başlatın:
@@ -54,9 +52,9 @@ Projenin API'ları JWT tabanlı kimlik doğrulama ile çalışır. Aşağıdaki 
 
 - `PATCH http://localhost:3000/admin/update`: adminin sistemdeki bilgilerini guncellemesi icin kullanılır.
 
-  ADMİNİN KULLANICILAR İLE İLGİLİ YAPACAGI İŞLEMLER
+ADMİNİN KULLANICILAR İLE İLGİLİ YAPACAGI İŞLEMLER
 - `GET http://localhost:3000/admin/getUsers`: adminin  tum lullanıcıları
-  getirmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir.
+getirmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir.
 
 
 - `GET http://localhost:3000/admin/getUser`: adminin  kullanıcı adına gore kullanıcı getirmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir. istenen parametreler : `userName`
@@ -68,7 +66,7 @@ Projenin API'ları JWT tabanlı kimlik doğrulama ile çalışır. Aşağıdaki 
 - `GET http://localhost:3000/admin/deleteAllUser`: adminin tum kullanıcıları ve kullanıcıların notlarınıda silmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir. istenen parametreler.
 API endpoint'lerine istek yaparken JSON formatında veri göndermelisiniz.
 
-  Daha fazla detay için, projenin kaynak kodlarını inceleyebilirsiniz.
+Daha fazla detay için, projenin kaynak kodlarını inceleyebilirsiniz.
 
 ## Katkılar ve Lisans
 Bu proje açık kaynaklıdır. Her türlü katkı ve öneriye açıktır.
