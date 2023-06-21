@@ -68,6 +68,9 @@ When making requests to API endpoints, you should send the data in JSON format.
 For more details, you can review the source code of the project.
 ## Contributions and License
 This project is open source and welcomes contributions and suggestions from the community.
+
+## Turkish
+
 # Kullanıcı Not Alma Uygulaması (Sadece API)
 
 Bu proje, kullanıcıların sisteme giriş yapabileceği, kayıt olabileceği, bilgilerini güncelleyebileceği ve notlarını ekleyebileceği bir kullanıcı sistemi ve not alma uygulaması ve kullanıcılar sadece API kısmını içermektedir ve ayrıca kullanıcılar ile ilgili işlemler için admin sistemini içermektedir.
@@ -75,7 +78,7 @@ Bu proje, kullanıcıların sisteme giriş yapabileceği, kayıt olabileceği, b
 kullanıcılar herhangi bir işlem yaptıgında her ne kadar basitte olsa yaptıkları işlem ile alakali bir log sistemi vardir.
 
 Bu aşamada herhangi bir frontend kısmı bulunmamaktadır.
-## Turkish
+
 ## Başlangıç
 
 Aşağıdaki adımları izleyerek projeyi yerel makinenizde çalıştırabilirsiniz:
