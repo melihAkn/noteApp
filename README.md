@@ -11,7 +11,7 @@ Bu aşamada herhangi bir frontend kısmı bulunmamaktadır.
 Aşağıdaki adımları izleyerek projeyi yerel makinenizde çalıştırabilirsiniz:
 
 1. Bu projeyi kopyalamak için aşağıdaki komutu çalıştırın:
-git clone https://github.com/kullanici-adı/proje-adı.git
+git clone [https://github.com/kullanici-adı/proje-adı.git](https://github.com/melihAkn/noteApp)
 
 2. Proje klasörüne gidin:
 cd .\noteApp\Backend\
