@@ -52,7 +52,7 @@ Projenin API'ları JWT tabanlı kimlik doğrulama ile çalışır. Aşağıdaki 
 
 - `PATCH http://localhost:3000/admin/update`: adminin sistemdeki bilgilerini guncellemesi icin kullanılır.
 
-ADMİNİN KULLANICILAR İLE İLGİLİ YAPACAGI İŞLEMLER
+  ADMİNİN KULLANICILAR İLE İLGİLİ YAPACAGI İŞLEMLER
 - `GET http://localhost:3000/admin/getUsers`: adminin  tum lullanıcıları
 getirmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir.
 
