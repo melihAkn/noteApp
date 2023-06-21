@@ -20,7 +20,6 @@ cd .\noteApp\Backend\
 npm install
 
 4. MongoDB veritabanını başlatın:
-
 mongod
 
 5. Projeyi başlatmak için aşağıdaki komutu çalıştırın:
@@ -54,7 +53,7 @@ Projenin API'ları JWT tabanlı kimlik doğrulama ile çalışır. Aşağıdaki 
 
   ADMİNİN KULLANICILAR İLE İLGİLİ YAPACAGI İŞLEMLER
 - `GET http://localhost:3000/admin/getUsers`: adminin  tum lullanıcıları
-getirmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir.
+  getirmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir.
 
 
 - `GET http://localhost:3000/admin/getUser`: adminin  kullanıcı adına gore kullanıcı getirmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir. istenen parametreler : `userName`
@@ -66,7 +65,7 @@ getirmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir.
 - `GET http://localhost:3000/admin/deleteAllUser`: adminin tum kullanıcıları ve kullanıcıların notlarınıda silmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir. istenen parametreler.
 API endpoint'lerine istek yaparken JSON formatında veri göndermelisiniz.
 
-Daha fazla detay için, projenin kaynak kodlarını inceleyebilirsiniz.
+  Daha fazla detay için, projenin kaynak kodlarını inceleyebilirsiniz.
 
 ## Katkılar ve Lisans
 Bu proje açık kaynaklıdır. Her türlü katkı ve öneriye açıktır.
