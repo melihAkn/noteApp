@@ -72,4 +72,76 @@ Daha fazla detay için, projenin kaynak kodlarını inceleyebilirsiniz.
 Bu proje açık kaynaklıdır. Her türlü katkı ve öneriye açıktır.
 
 ## English
-This is the English version of the README. Add your content here.
+User Note Taking Application (API Only)
+
+This project is an API-based user system and note-taking application where users can log in, register, update their information, and add notes. The project also includes an admin system for managing user-related operations.
+
+Users are provided with a simple log system that records their actions, no matter how basic they may be.
+
+At this stage, there is no frontend part available.
+## Başlangıç
+
+You can run the project on your local machine by following the steps below:
+
+1. Clone this project by running the following command:
+git clone https://github.com/melihAkn/noteApp
+
+2. Navigate to the project folder:
+cd .\noteApp\Backend\
+
+3. Install the required dependencies by running the following command:
+npm install
+
+4. Start the MongoDB database:
+mongod
+
+5. Run the project by executing the following command:
+npm start
+
+6. You can use an API development tool (such as Postman, cURL, etc.) to test the APIs.
+
+## API Documentation
+
+The project's APIs work with JWT-based authentication. The following APIs are available:
+
+- `POST http://localhost:3000/users/signup`: To create a new user registration, you can use the following API endpoint. The required parameters are:`name`, `surName`, `email`,`userName`,`password`.
+
+- `POST http://localhost:3000/users/login`: It is used for user login. The required parameters are username or email and password. Upon successful login, a JWT token is returned.
+
+- `POST http://localhost:3000/users/addNote`: It retrieves the profile information of the current user. A valid JWT token is required for authentication.
+
+- `GET http://localhost:3000/users/myNotes`: It allows retrieving the notes added by the current user in the system. A valid JWT token is required for authentication.
+
+- `PATCH http://localhost:3000/users/user`: It allows the user to update their own information. A valid JWT token is required for authentication.
+
+------------------------------Admin operations-------------------------------------
+- `GET http://localhost:3000/admin`: When accessing the admin homepage, it returns the value "Welcome".
+
+- `POST http://localhost:3000/admin/login`: It is used for admin login. The required parameters are username and password. Upon successful login, a JWT token is returned.
+
+- `POST http://localhost:3000/admin/register`: It is used to create a new admin record. The required parameters are userName and password.
+
+- `PATCH http://localhost:3000/admin/update`: It is used to update the information of an admin in the system.
+
+Admin can perform various operations related to users.
+
+- `GET http://localhost:3000/admin/getUsers`: To retrieve all users, an admin can make use of the following operation. A valid JWT token is required for authentication.
+
+- `GET http://localhost:3000/admin/getUser`: To retrieve a user based on their username, an admin can use the following operation. A valid JWT token is required for authentication.
+
+- `DELETE http://localhost:3000/admin/deleteUser`: To delete a user based on their username or email, an admin can use the following operation. A valid JWT token is required for authentication.
+
+- `DELETE http://localhost:3000/admin/deleteUser`: To delete a user based on their username or email, including the deletion of their associated notes, an admin can use the following operation. A valid JWT token is required for authentication.
+
+- `GET http://localhost:3000/admin/deleteAllUser`: To delete all users and their associated notes, an admin can use the following operation. A valid JWT token is required for authentication.
+- 
+When making requests to API endpoints, you should send the data in JSON format.
+For more details, you can review the source code of the project.
+## Contributions and License
+This project is open source and welcomes contributions and suggestions from the community.
+
+
+
+
+
+
