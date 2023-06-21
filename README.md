@@ -1,5 +1,5 @@
 ## Dil Seçenekleri language options
-- [English](#english)
+- [English](#Turkish)
 # Kullanıcı Not Alma Uygulaması (Sadece API)
 
 Bu proje, kullanıcıların sisteme giriş yapabileceği, kayıt olabileceği, bilgilerini güncelleyebileceği ve notlarını ekleyebileceği bir kullanıcı sistemi ve not alma uygulaması ve kullanıcılar sadece API kısmını içermektedir ve ayrıca kullanıcılar ile ilgili işlemler için admin sistemini içermektedir.
@@ -71,7 +71,7 @@ Daha fazla detay için, projenin kaynak kodlarını inceleyebilirsiniz.
 ## Katkılar ve Lisans
 Bu proje açık kaynaklıdır. Her türlü katkı ve öneriye açıktır.
 
-## English
+## Turkish
 User Note Taking Application (API Only)
 
 This project is an API-based user system and note-taking application where users can log in, register, update their information, and add notes. The project also includes an admin system for managing user-related operations.
