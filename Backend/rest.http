@@ -1,0 +1,120 @@
+@BASE_URL =http://localhost:3000
+//user islemleri
+###
+GET {{BASE_URL}}
+###
+POST {{BASE_URL}}/users/signup
+Content-Type: application/json
+
+{
+    "name" : "test1234",
+    "surName" : "test1234",
+    "email" : "23232322223222232",
+    "userName" : "222222322323232233",
+    "password" : "test1234"
+}
+
+###
+POST {{BASE_URL}}/users/login
+Content-Type: application/json
+
+{
+    "email": "23232322223222232",
+    "password" : "test1234"
+}
+
+
+###
+POST {{BASE_URL}}/users/addNote
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDhiNjgzMzk0MzZiMTgwZmZlZTRhMGIiLCJpYXQiOjE2ODY4NTc5ODcsImV4cCI6MTY4Njg2MTU4N30.ZAvuZQpChZhct6UWiWm_kDYF3GJ4AVlILf4FcA7hUC4
+
+{
+    "note" : "this is note "
+}
+
+###
+GET {{BASE_URL}}/users/myNotes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDhiNjgzMzk0MzZiMTgwZmZlZTRhMGIiLCJpYXQiOjE2ODY4NTc5ODcsImV4cCI6MTY4Njg2MTU4N30.ZAvuZQpChZhct6UWiWm_kDYF3GJ4AVlILf4FcA7hUC4
+
+###
+PATCH {{BASE_URL}}/users/user 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDhiNjgzMzk0MzZiMTgwZmZlZTRhMGIiLCJpYXQiOjE2ODY4NTc5ODcsImV4cCI6MTY4Njg2MTU4N30.ZAvuZQpChZhct6UWiWm_kDYF3GJ4AVlILf4FcA7hUC4
+
+{
+    "userName" : "kemal"
+
+}
+
+//admin islemleri
+
+###
+GET {{BASE_URL}}/admin
+
+###
+POST {{BASE_URL}}/admin/login
+Content-Type: application/json
+
+{
+    "userName" : "admin",
+    "password" : "admin123456" 
+}
+
+###
+POST {{BASE_URL}}/admin/register
+Content-Type: application/json
+
+{
+   "userName" : "admin",
+   "password" : "admin1234" 
+}
+
+###
+PATCH {{BASE_URL}}/admin/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdlMDA3NWFlODg4YjNmZmJkNWI3NzkiLCJpc2FkbWluIjp0cnVlLCJpYXQiOjE2ODY3NzAxMjgsImV4cCI6MTY4Njc3MzcyOH0.Wr-KCevDaNP9Sv9N_kpo6MmKpD3xLeIhVuIjExCmD84
+
+{
+   "userName" : "admin",
+   "password" : "admin1234" 
+}
+
+//kullanici islemleri
+//tum kullanicilari getirme
+###
+GET {{BASE_URL}}/admin/getUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdlMDA3NWFlODg4YjNmZmJkNWI3NzkiLCJpc2FkbWluIjp0cnVlLCJpYXQiOjE2ODY3NjczNzMsImV4cCI6MTY4Njc3MDk3M30.Y_jD2fI5Yw-3SFmnRQnUmObtWqP2LqWBgVRLiGd0HjY
+
+###
+//belirli kullanici getirme
+GET {{BASE_URL}}/admin/getUser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdjYTIwNGM0NzQwMTMzY2FiYzk5NTEiLCJpYXQiOjE2ODY2ODEzNjksImV4cCI6MTY4NjY4NDk2OX0.HUQzk82H6yaF_1DwUPdyMMz79ublR4hFcZQuWVrLnos
+###
+
+//username yada email alınarak kullanici silme ve varsa notlarida silinmeli
+DELETE {{BASE_URL}}/admin/deleteUser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdlMDA3NWFlODg4YjNmZmJkNWI3NzkiLCJpc2FkbWluIjp0cnVlLCJpYXQiOjE2ODY3NzAxMjgsImV4cCI6MTY4Njc3MzcyOH0.Wr-KCevDaNP9Sv9N_kpo6MmKpD3xLeIhVuIjExCmD84
+
+{
+    "userName" :"wdwdwdwdwdwdwdwdwdwdwdwdwdwdwdwd"
+}
+
+###
+//tum kullanicilari silme aynı zamanda tum notlarida silinmeli
+GET {{BASE_URL}}/admin/deleteAllUser
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdlMDA3NWFlODg4YjNmZmJkNWI3NzkiLCJpc2FkbWluIjp0cnVlLCJpYXQiOjE2ODY3NzAxMjgsImV4cCI6MTY4Njc3MzcyOH0.Wr-KCevDaNP9Sv9N_kpo6MmKpD3xLeIhVuIjExCmD84
+
+###
+GET {{BASE_URL}}/admin/getUser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdlMDA3NWFlODg4YjNmZmJkNWI3NzkiLCJpc2FkbWluIjp0cnVlLCJpYXQiOjE2ODY3NzAxMjgsImV4cCI6MTY4Njc3MzcyOH0.Wr-KCevDaNP9Sv9N_kpo6MmKpD3xLeIhVuIjExCmD84
+
+{
+    "userName" : "GetSignupPage"
+}
+
+
