@@ -79,7 +79,7 @@ This project is an API-based user system and note-taking application where users
 Users are provided with a simple log system that records their actions, no matter how basic they may be.
 
 At this stage, there is no frontend part available.
-## Başlangıç
+## Start
 
 You can run the project on your local machine by following the steps below:
 
