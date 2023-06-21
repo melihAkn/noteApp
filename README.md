@@ -106,20 +106,20 @@ The project's APIs work with JWT-based authentication. The following APIs are av
 
 - `POST http://localhost:3000/users/signup`: To create a new user registration, you can use the following API endpoint. The required parameters are:`name`, `surName`, `email`,`userName`,`password`.
 
-- `POST http://localhost:3000/users/login`: It is used for user login. The required parameters are username or email and password. Upon successful login, a JWT token is returned.
+- `POST http://localhost:3000/users/login`: It is used for user login. The required parameters are username or email and password.The required parameters are:`email` or `userName`,`password`. Upon successful login, a JWT token is returned.
 
 - `POST http://localhost:3000/users/addNote`: It retrieves the profile information of the current user. A valid JWT token is required for authentication.
 
-- `GET http://localhost:3000/users/myNotes`: It allows retrieving the notes added by the current user in the system. A valid JWT token is required for authentication.
+- `GET http://localhost:3000/users/myNotes`: It allows retrieving the notes added by the current user in the system. A valid JWT token is required for authentication.The required parameters are:`userNotes`
 
 - `PATCH http://localhost:3000/users/user`: It allows the user to update their own information. A valid JWT token is required for authentication.
 
 ------------------------------Admin operations-------------------------------------
 - `GET http://localhost:3000/admin`: When accessing the admin homepage, it returns the value "Welcome".
 
-- `POST http://localhost:3000/admin/login`: It is used for admin login. The required parameters are username and password. Upon successful login, a JWT token is returned.
+- `POST http://localhost:3000/admin/login`: It is used for admin login. The required parameters are username and password.The required parameters are:`userName`,`password`. Upon successful login, a JWT token is returned.
 
-- `POST http://localhost:3000/admin/register`: It is used to create a new admin record. The required parameters are userName and password.
+- `POST http://localhost:3000/admin/register`: It is used to create a new admin record. The required parameters are `userName`,`password`.
 
 - `PATCH http://localhost:3000/admin/update`: It is used to update the information of an admin in the system.
 
@@ -127,11 +127,11 @@ Admin can perform various operations related to users.
 
 - `GET http://localhost:3000/admin/getUsers`: To retrieve all users, an admin can make use of the following operation. A valid JWT token is required for authentication.
 
-- `GET http://localhost:3000/admin/getUser`: To retrieve a user based on their username, an admin can use the following operation. A valid JWT token is required for authentication.
+- `GET http://localhost:3000/admin/getUser`: To retrieve a user based on their username, an admin can use the following operation.The required parameters are `userName`. A valid JWT token is required for authentication.
 
-- `DELETE http://localhost:3000/admin/deleteUser`: To delete a user based on their username or email, an admin can use the following operation. A valid JWT token is required for authentication.
+- `DELETE http://localhost:3000/admin/deleteUser`: To delete a user based on their username or email, an admin can use the following operation.The required parameters are `userName` or `email`. A valid JWT token is required for authentication.
 
-- `DELETE http://localhost:3000/admin/deleteUser`: To delete a user based on their username or email, including the deletion of their associated notes, an admin can use the following operation. A valid JWT token is required for authentication.
+- `DELETE http://localhost:3000/admin/deleteUser`: To delete a user based on their username or email, including the deletion of their associated notes, an admin can use the following operation.The required parameters are `userName` or `email`. A valid JWT token is required for authentication.
 
 - `GET http://localhost:3000/admin/deleteAllUser`: To delete all users and their associated notes, an admin can use the following operation. A valid JWT token is required for authentication.
 - 
