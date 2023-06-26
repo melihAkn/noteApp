@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
@@ -14,5 +13,6 @@
     "http-errors": "^2.0.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.2.2"
-  }
+  },
+  "description": ""
 }

@@ -44,22 +44,24 @@ const login = async (req,res) =>{
             return
         }
         const user = await UserModel.login(req.body.email , req.body.password);
-        if(!user.hata){
+        if(user.name){
             const token = await user.generateToken();
             responseMessage.token = token;
             responseMessage.message ="succesfully login";
             getDateAndWriteLogFile(req.body.email,responseMessage.message);
-            res.json(responseMessage);
+            
 
-        } 
-        else{
-            res.json("email/userName or  password is wrong ");
         }
+        else{
+            responseMessage.message = "email/username or password wrong";
+        }
+        res.json(responseMessage);
        }    
        catch(error){
         console.log(error)
        }   
 }
+//user notes proccess
 const userNotesAdd = async (req,res) =>{
     try{
         responseMessage ={
@@ -72,7 +74,7 @@ const userNotesAdd = async (req,res) =>{
         const insertedUserNote = new UserNotesModel(req.body);
         insertedUserNote.userName = findUser.userName;
         await insertedUserNote.save();
-        responseMessage ={userName :insertedUserNote.userName,note : req.body.note,message :"note was succesfully inserted"};
+        responseMessage ={userName :insertedUserNote.userName, note : req.body.note, message :"note was succesfully inserted"};
         getDateAndWriteLogFile(insertedUserNote.userName,responseMessage.message);
         res.json(responseMessage);
     }catch(err){
@@ -81,6 +83,66 @@ const userNotesAdd = async (req,res) =>{
         });
     }
 }
+
+const userNotesDelete = async (req,res) => {
+    try {
+        responseMessage ={
+            userName :"",
+            note : "",
+            message : ""
+        }
+        const jwtResult = jwt.verify(req.header('Authorization').replace('Bearer ',''), 'secretKey');
+        const  findUser = await UserModel.findById({_id : jwtResult._id});
+
+        const findUserNote = await UserNotesModel.find({note : req.body.note});
+        if(findUserNote.length > 0){
+            await UserNotesModel.deleteOne({note:req.body.note});
+            responseMessage ={userName :findUser.userName, note : req.body.note, message :"note was succesfully deleted"};
+            getDateAndWriteLogFile(findUser.userName,responseMessage.message);
+        }
+        else{
+            responseMessage ={userName :findUser.userName, note : req.body.note, message :"this note not exist"};
+        }
+        res.json(responseMessage);
+
+    } catch (error) {
+        res.send({
+            hata : err
+        });
+    }
+
+
+}
+
+
+const userNotesUpdate = async (req,res) => {
+    try {
+        responseMessage ={
+            userName :"",
+            note : "",
+            message : ""
+        }
+        const jwtResult = jwt.verify(req.header('Authorization').replace('Bearer ',''), 'secretKey');
+        const  findUser = await UserModel.findById({_id : jwtResult._id});
+
+        const findUserNote = await UserNotesModel.find({userName : findUser.userName});
+        if(findUserNote.length > 0){
+            await UserNotesModel.updateOne({note:req.body.note}); 
+            responseMessage ={userName :findUser.userName, note : req.body.note, message :"note was succesfully updated"};
+            getDateAndWriteLogFile(findUser.userName,responseMessage.message);
+        }
+        else{
+            responseMessage ={userName :findUser.userName, note : req.body.note, message :"this note not exist"};
+        }
+        res.json(responseMessage);
+    } catch (error) {
+        res.send({
+            hata : err
+        });
+    }
+
+}
+
 const getMyNotes = async (req,res) => {
     try{
         responseMessage ={
@@ -137,4 +199,6 @@ module.exports = {
     userNotesAdd,
     getMyNotes,
     updateUserInfos,
+    userNotesDelete,
+    userNotesUpdate
 }

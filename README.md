@@ -39,6 +39,10 @@ The project's APIs work with JWT-based authentication. The following APIs are av
 
 - `GET http://localhost:3000/users/myNotes`: It allows retrieving the notes added by the current user in the system. A valid JWT token is required for authentication.The required parameters are:`userNotes`
 
+- `DELETE http://localhost:3000/users/myNotes`: It allows delete the notes added by the current user in the system. A valid JWT token is required for authentication.The required parameters are:`userNotes`
+
+- `PATCH http://localhost:3000/users/myNotes`: It allows update the notes added by the current user in the system. A valid JWT token is required for authentication.The required parameters are:`userNotes`
+
 - `PATCH http://localhost:3000/users/user`: It allows the user to update their own information. A valid JWT  is required for authentication.
 
 ------------------------------Admin operations-------------------------------------
@@ -109,6 +113,10 @@ Projenin API'ları JWT tabanlı kimlik doğrulama ile çalışır. Aşağıdaki 
 - `POST http://localhost:3000/users/addNote`: Mevcut kullanıcının profil bilgilerini getirir. Kimlik doğrulama için geçerli bir JWT token gereklidir.
 
 - `GET http://localhost:3000/users/myNotes`: Mevcut kullanıcının sisteme eklediği notları getirmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir.
+
+- `DELETE http://localhost:3000/users/myNotes`: Mevcut kullanıcının sisteme eklediği notları silmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir.İstenen parametreler: `userNote`. 
+
+- `PATCH http://localhost:3000/users/myNotes`: Mevcut kullanıcının sisteme eklediği notları guncellemesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir.İstenen parametreler: `userNotes`.
 
 - `PATCH http://localhost:3000/users/user`: Kullanıcının kendi bilgilerini guncellemesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir. 
 

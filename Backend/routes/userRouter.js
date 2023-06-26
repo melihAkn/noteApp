@@ -5,12 +5,22 @@ const errorsMW = require('../middleware/errorsMW');
 router.post('/signup',userControllers.signup);
 // user login
 router.post('/login',userControllers.login);
+// user update own values
+router.patch('/user',userControllers.updateUserInfos);
+
+
 // user add note
 router.post('/addNote',userControllers.userNotesAdd);
 // user get note
 router.get('/myNotes',userControllers.getMyNotes);
-// user update own values
-router.patch('/user',userControllers.updateUserInfos);
+//user delete notes
+router.delete('/myNotes',userControllers.userNotesDelete);
+// user notes update
+router.patch('/myNotes',userControllers.userNotesUpdate);
+
+
+
+
 
 module.exports = router;
 

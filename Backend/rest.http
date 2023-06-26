@@ -19,7 +19,7 @@ POST {{BASE_URL}}/users/login
 Content-Type: application/json
 
 {
-    "email": "23232322223222232",
+    "email": "2222223224323232233",
     "password" : "test1234"
 }
 
@@ -27,7 +27,7 @@ Content-Type: application/json
 ###
 POST {{BASE_URL}}/users/addNote
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDhiNjgzMzk0MzZiMTgwZmZlZTRhMGIiLCJpYXQiOjE2ODY4NTc5ODcsImV4cCI6MTY4Njg2MTU4N30.ZAvuZQpChZhct6UWiWm_kDYF3GJ4AVlILf4FcA7hUC4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk5YzBlMGM2MjE0NjVkYmEwZmQ3NGYiLCJpYXQiOjE2ODc3OTc5OTksImV4cCI6MTY4NzgwMTU5OX0.KwQ-D_LkZtADK8B1ElA0L0agNEHg4XczmGxvGptv0yU
 
 {
     "note" : "this is note "
@@ -36,9 +36,28 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDhiNjgzM
 ###
 GET {{BASE_URL}}/users/myNotes
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDhiNjgzMzk0MzZiMTgwZmZlZTRhMGIiLCJpYXQiOjE2ODY4NTc5ODcsImV4cCI6MTY4Njg2MTU4N30.ZAvuZQpChZhct6UWiWm_kDYF3GJ4AVlILf4FcA7hUC4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk5YzBlMGM2MjE0NjVkYmEwZmQ3NGYiLCJpYXQiOjE2ODc3OTc5OTksImV4cCI6MTY4NzgwMTU5OX0.KwQ-D_LkZtADK8B1ElA0L0agNEHg4XczmGxvGptv0yU
 
 ###
+DELETE {{BASE_URL}}/users/myNotes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk5YzBlMGM2MjE0NjVkYmEwZmQ3NGYiLCJpYXQiOjE2ODc3OTc5OTksImV4cCI6MTY4NzgwMTU5OX0.KwQ-D_LkZtADK8B1ElA0L0agNEHg4XczmGxvGptv0yU
+
+{
+ "note" : "this is note "
+}
+###
+PATCH {{BASE_URL}}/users/myNotes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk5YzBlMGM2MjE0NjVkYmEwZmQ3NGYiLCJpYXQiOjE2ODc3OTc5OTksImV4cCI6MTY4NzgwMTU5OX0.KwQ-D_LkZtADK8B1ElA0L0agNEHg4XczmGxvGptv0yU
+
+{
+    "oldNote" :"guncelleme denemesi 22",
+    "note" : "denemeler bitmez"
+}
+
+###
+
 PATCH {{BASE_URL}}/users/user 
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDhiNjgzMzk0MzZiMTgwZmZlZTRhMGIiLCJpYXQiOjE2ODY4NTc5ODcsImV4cCI6MTY4Njg2MTU4N30.ZAvuZQpChZhct6UWiWm_kDYF3GJ4AVlILf4FcA7hUC4
