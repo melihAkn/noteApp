@@ -7,11 +7,11 @@ POST {{BASE_URL}}/users/signup
 Content-Type: application/json
 
 {
-    "name" : "test1234",
-    "surName" : "test1234",
-    "email" : "23232322223222232",
-    "userName" : "222222322323232233",
-    "password" : "test1234"
+    "name" : "test1212",
+    "surName" : "test1212",
+    "email" : "test2232323@gmail.com",
+    "userName" : "test1212",
+    "password" : "test12234"
 }
 
 ###

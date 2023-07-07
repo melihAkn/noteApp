@@ -11,16 +11,26 @@ const getDateAndWriteLogFile = (userName,message) =>{
     fileProc(`${userName} named user  ${formattedDate+" "+formattedTime} at date  ${message}`);
 }
 /*
-if user get request createdAt updatedAt id --v like we dont want to user's saw this
+if user get request createdAt updatedAt id --v like  dont want to user's saw this
  unexpected data
     delete req.body.createdAt;
     delete req.body.updatedAt;
 */
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+  
 const signup = async (req,res,next) =>{
     responseMessage ={
         message : ""
     }
     try {
+        const email = req.body.email;
+        if (!isValidEmail(email)) {
+          res.status(400).send('Geçersiz e-posta adresi!');
+          return;
+        }
         const insertedUser = new UserModel(req.body);
         const result = await  insertedUser.save();
         if(result){
@@ -28,11 +38,11 @@ const signup = async (req,res,next) =>{
         }
         getDateAndWriteLogFile(req.body.userName,responseMessage.message);
         res.json(responseMessage.message);
-    } catch (error) {
-        console.log(error);
+    } catch (err) {
+        next(err);
     }
 }
-const login = async (req,res) =>{
+const login = async (req,res,next) =>{
     try{
         let responseMessage ={
             message : "",
@@ -58,11 +68,11 @@ const login = async (req,res) =>{
         res.json(responseMessage);
        }    
        catch(error){
-        console.log(error)
+        next(error);
        }   
 }
 //user notes proccess
-const userNotesAdd = async (req,res) =>{
+const userNotesAdd = async (req,res,next) =>{
     try{
         responseMessage ={
             userName :"",
@@ -78,13 +88,11 @@ const userNotesAdd = async (req,res) =>{
         getDateAndWriteLogFile(insertedUserNote.userName,responseMessage.message);
         res.json(responseMessage);
     }catch(err){
-        res.send({
-            hata : err
-        });
+        next(error);
     }
 }
 
-const userNotesDelete = async (req,res) => {
+const userNotesDelete = async (req,res,next) => {
     try {
         responseMessage ={
             userName :"",
@@ -106,16 +114,14 @@ const userNotesDelete = async (req,res) => {
         res.json(responseMessage);
 
     } catch (error) {
-        res.send({
-            hata : err
-        });
+        next(error);
     }
 
 
 }
 
 
-const userNotesUpdate = async (req,res) => {
+const userNotesUpdate = async (req,res,next) => {
     try {
         responseMessage ={
             userName :"",
@@ -136,14 +142,12 @@ const userNotesUpdate = async (req,res) => {
         }
         res.json(responseMessage);
     } catch (error) {
-        res.send({
-            hata : err
-        });
+        next(error);
     }
 
 }
 
-const getMyNotes = async (req,res) => {
+const getMyNotes = async (req,res,next) => {
     try{
         responseMessage ={
             notes :[],
@@ -159,13 +163,10 @@ const getMyNotes = async (req,res) => {
         getDateAndWriteLogFile(findUser.userName,"get all notes");
         res.json(responseMessage)
     }catch(err){
-        console.log(err);
-        res.send({
-            hata : err
-        });
+        next(error);
     }
 }
-const updateUserInfos = async (req,res) =>{
+const updateUserInfos = async (req,res,next) =>{
     responseMessage ={
         message :"",
     }
@@ -190,6 +191,7 @@ const updateUserInfos = async (req,res) =>{
                 getDateAndWriteLogFile(oldUserName.userName,"updated own infos");
                 res.json(responseMessage);  
     } catch (error) {
+        next(error);
         console.log(error);
     }
 };

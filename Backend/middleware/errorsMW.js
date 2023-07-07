@@ -1,16 +1,9 @@
-const createError = require('http-errors');
-
-
-
-const errors = (err,req,res,next) => {
-    
-   
-    console.log("ewdsawdsawdsawdsawdsawrr");
-   // res.send()
- 
-
- 
-   };
- 
- module.exports = errors;
+function errorHandler(err, req, res, next) {
+  console.log(err);
+  res.json({
+    hatakodu:err.statusCode,
+    mesaj : err.message
+})
+}
+module.exports = errorHandler;
 
