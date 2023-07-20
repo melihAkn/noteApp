@@ -86,8 +86,7 @@ The project's APIs work with JWT-based authentication. The following APIs are av
 -   `DELETE http://localhost:3000/admin/deleteUser`: To delete a user based on their username or email, including the deletion of their associated notes, an admin can use the following operation.The required parameters are `userName` or `email`. A valid JWT is required for authentication.
 
 -   `GET http://localhost:3000/admin/deleteAllUser`: To delete all users and their associated notes, an admin can use the following operation. A valid JWT is required for authentication.
--   When making requests to API endpoints, you should send the data in JSON format.
-    For more details, you can review the source code of the project.
+-   When making requests to API endpoints, you should send the data in JSON format. For more details, you can review the source code of the project.
 
 ## Contributions and License
 
@@ -179,8 +178,7 @@ Projenin API'ları JWT tabanlı kimlik doğrulama ile çalışır. Aşağıdaki 
 
 -   `DELETE http://localhost:3000/admin/deleteUser`: adminin kullanıcı adına veya emaile gore kullanıcı silmesini ve silinen kullanıcının notlarınıda silmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir. istenen parametreler : `userName` or `email`
 
--   `GET http://localhost:3000/admin/deleteAllUser`: adminin tum kullanıcıları ve kullanıcıların notlarınıda silmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir. istenen parametreler.
-    API endpoint'lerine istek yaparken JSON formatında veri göndermelisiniz.
+-   `GET http://localhost:3000/admin/deleteAllUser`: adminin tum kullanıcıları ve kullanıcıların notlarınıda silmesini sağlar. Kimlik doğrulama için geçerli bir JWT token gereklidir. istenen parametreler. API endpoint'lerine istek yaparken JSON formatında veri göndermelisiniz.
 
 Daha fazla detay için, projenin kaynak kodlarını inceleyebilirsiniz.
 
